@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Advanced AI Stock Predictor - RAMMD Ultra</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- PASSWORD SCREEN -->
+        <div class="password-screen" id="passwordScreen">
+            <div class="password-box">
+                <h1>🔐 Secure Access Required</h1>
+                <p>Enter password to access Advanced Stock Predictor</p>
+                <input type="password" id="passwordInput" placeholder="Enter password..." 
+                       onkeypress="if(event.key==='Enter') checkPassword()">
+                <button class="btn" onclick="checkPassword()">Unlock System</button>
+                <div id="passwordError" class="error" style="display: none; margin-top: 15px;"></div>
+            </div>
+        </div>
+
+        <!-- MAIN SYSTEM (Hidden until password correct) -->
+        <div class="main-system" id="mainSystem" style="display: none;">
+            <header class="header">
+                <h1>🚀 Advanced AI Stock Predictor - RAMMD Ultra</h1>
+                <p>Zero-Shot Learning | 60+ Patterns | 50+ Indicators | Complete Market Analysis</p>
+                <p class="subtitle">Powered by Gemini AI | Free & Pro Tiers</p>
+            </header>
+
+            <div class="api-setup" id="apiSetup">
+                <h2>🔑 Configure Your Gemini API Key</h2>
+                <p style="color: #666; margin-bottom: 15px;">
+                    Choose your tier: Free (15 RPM) or Pro (2000+ RPM)
+                </p>
+                <div class="input-group">
+                    <label for="apiKey">Gemini API Key:</label>
+                    <input type="password" id="apiKey" placeholder="Enter your API key (Free or Pro)">
+                    <small>Get key: <a href="https://makersuite.google.com/app/apikey" target="_blank">Free Tier</a> | 
+                    <a href="https://ai.google.dev/pricing" target="_blank">Pro Tier</a></small>
+                </div>
+                <button class="btn" onclick="saveApiKey()">Detect Tier & Start</button>
+            </div>
+
+            <div class="query-section" id="querySection" style="display: none;">
+                <h2>💬 Ask Your Question</h2>
+                <p class="example">Examples: "Tesla price tomorrow 3pm" | "Reliance next Monday" | "Apple in 2 days"</p>
+                <div class="query-input">
+                    <input type="text" id="queryInput" placeholder="What will be the price of..." 
+                           onkeypress="if(event.key==='Enter') predictStock()">
+                    <button class="btn" onclick="predictStock()">🔮 Predict</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <h3>🧠 Analyzing with Zero-Shot AI...</h3>
+                <p>Processing 10 years data, 60+ patterns, 50+ indicators, news...</p>
+                <p>This takes 40-80 seconds for maximum accuracy</p>
+            </div>
+
+            <div class="results" id="results"></div>
+
+            <div class="history-section" id="historySection" style="display: none;">
+                <h2>📜 Your Predictions</h2>
+                <div id="historyList"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="display: none;" id="footer">
+        <p>Built with ❤️ | Zero-Shot Learning | 60+ Patterns | 50+ Indicators</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
