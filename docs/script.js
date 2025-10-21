@@ -1,5 +1,4 @@
-const API_URL = 'https://stock-predictor-ultra-cl8nnj629-agnis-projects-5f4b1cf0.vercel.app';  // REPLACE THIS
-
+const API_URL = 'https://stock-predictor-ultra-8cyd16vsc-agnis-projects-5f4b1cf0.vercel.app';
 let userId = localStorage.getItem('userId') || generateUserId();
 let apiKey = localStorage.getItem('apiKey') || '';
 let authenticated = sessionStorage.getItem('authenticated') === 'true';
